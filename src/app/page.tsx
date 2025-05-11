@@ -9,6 +9,7 @@ import ClientsCard from "./ui/ClientsCard";
 import { ClientsCardProps } from "./types/ClientsCardProps";
 import FrequentlyAsked from "./ui/FrequentlyAsked";
 import StartYour from "./components/StartYour";
+import Link from "next/link";
 
 
 
@@ -87,22 +88,22 @@ export const FrequentlyAskedData = [
   {
     question: "How do I search for properties on Estatein?",
     answer: "Learn how to use our user-friendly search tools to find properties that match your criteria.",
-    link: "#",
+    link: "/faq/search-properties",
   },
   {
     question: "What documents do I need to sell my property through Estatein?",
     answer: "Find out about the necessary documentation for listing your property with us.",
-    link: "#",
+    link: "/faq/sell-property",
   },
   {
     question: "How can I contact an Estatein agent?",
     answer: "Discover the different ways you can get in touch with our experienced agents.",
-    link: "#",
+    link: "/faq/contact-agent",
   },
   {
     question: "Can I sell my property through Estatein without a real estate agent?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    link: "#",
+    answer: "Learn about the process of selling your property independently through our platform.",
+    link: "/faq/sell-without-agent",
   },
 ]
 
@@ -139,10 +140,12 @@ export default function Home() {
               <p className="mb-[60px] text-sm xl:text-lg">Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.</p>
             </div>
             <div className="flex flex-col xl:flex-row mb-[80px] gap-5">
-              <button className="px-[24px] py-[14px] bg-grey08 rounded-2xl border border-grey15 cursor-pointer 
-                hover:bg-grey08/80 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-grey08 focus:ring-opacity-50" >Learn More</button>
-              <button className="px-[24px] py-[14px] bg-purple60 rounded-2xl border border-grey15 cursor-pointer
-                hover:bg-purple60/80 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple60 focus:ring-opacity-50" >Browse Properties</button> 
+              <Link href="/learn-more" className="px-[24px] py-[14px] bg-grey08 rounded-2xl border border-grey15 cursor-pointer 
+                hover:bg-grey08/80 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-grey08 focus:ring-opacity-50">
+                Learn More
+              </Link>
+              <Link href="/properties" className="px-[24px] py-[14px] bg-purple60 rounded-2xl border border-grey15 cursor-pointer
+                hover:bg-purple60/80 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple60 focus:ring-opacity-50" >Browse Properties</Link> 
             </div>
             <ul className="grid grid-cols-2 xl:grid-cols-3 gap-5"> 
               <CountPeople count="200+" text="Happy Customers" />
@@ -161,13 +164,13 @@ export default function Home() {
         </ul>
       </section>
       <section id="features" className="grid grid-cols-12 container">
-        <Carousel minHeightPlus="900" items={cards} />
+        <Carousel minHeightPlus="900" title="Featured Properties" description="Explore our handpicked selection of premium properties that combine luxury, comfort, and prime locations." viewBtn="View All Properties" viewBtnLink="/propertiesList" items={cards} />
       </section>
       <section id="properties" className="grid grid-cols-12 container">
-        <Carousel minHeight="400" title="What Our Clients Say" description="Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs." viewBtn="View All Testimonials" items={cardsClients} />
+        <Carousel minHeight="400" title="What Our Clients Say" description="Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs." viewBtn="View All Testimonials" viewBtnLink="/testimonials" items={cardsClients} />
       </section>
       <section id="testimonials" className="grid grid-cols-12 container">
-        <Carousel minHeight="300" title="Frequently Asked Questions" description="Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way." viewBtn="View All FAQ’s" items={cardsFrequentlyAsked} />
+        <Carousel minHeight="300" title="Frequently Asked Questions" description="Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way." viewBtn="View All FAQ's" viewBtnLink="/faq" items={cardsFrequentlyAsked} />
       </section>
       <section id="faq" className="relative  px-[24px] py-[50px] w-full">
         {/* Левый фоновый элемент */}

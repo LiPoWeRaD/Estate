@@ -4,12 +4,14 @@ import { FC, ReactNode, useEffect, useState, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ArrowR from '../svg/arrowR';
 import Stars from './stars';
+import Link from 'next/link';
 
 interface CarouselProps {
   items?: ReactNode[];
   title?: string;
   description?: string;
   viewBtn?: string | boolean;
+  viewBtnLink?: string;
   mobileVisibleCount?: number;
   desktopVisibleCount?: number;
   minHeight?: string;
@@ -27,6 +29,7 @@ const Carousel: FC<CarouselProps> = ({
   mobileVisibleCount = 1,
   desktopVisibleCount = 3,
   viewBtn = "View All Properties",
+  viewBtnLink,
   minHeight,
   minHeightPlus = "0",
   DesktopCols = 3,
@@ -41,15 +44,17 @@ const Carousel: FC<CarouselProps> = ({
     const handleResize = () => {
       const isNowDesktop = window.innerWidth >= 1280;
       setIsDesktop(isNowDesktop);
-      if (!isNowDesktop && currentIndex !== 0) {
-        setCurrentIndex(0);
+      // Проверяем, не выходит ли текущий индекс за пределы
+      const maxIndex = Math.max(0, items.length - (isNowDesktop ? desktopVisibleCount : mobileVisibleCount));
+      if (currentIndex > maxIndex) {
+        setCurrentIndex(maxIndex);
       }
     };
     
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [currentIndex]);
+  }, [currentIndex, items.length, desktopVisibleCount, mobileVisibleCount]);
 
   const [visibleCount, setVisibleCount] = useState(isDesktop ? desktopVisibleCount : mobileVisibleCount);
 
@@ -82,16 +87,16 @@ const Carousel: FC<CarouselProps> = ({
   const visibleItems = items.slice(currentIndex, currentIndex + visibleCount);
 
   return (
-    <div className="col-start-1 col-span-12 mx-auto py-12 px-4">
+    <div className="col-start-1 col-span-12 mx-auto py-12 px-4 w-full">
       <p className="mb-4"><Stars /></p>
       {title && <h2 className="text-3xl font-bold mb-8">{title}</h2>}
       <div className="grid grid-cols-1 md:grid-cols-6 mb-10">
         <p className="md:col-span-4 text-lg">{description}</p>
         {viewBtn !== false && (
-          <button className="ml-auto px-[24px] py-[14px] hidden col-start-5 col-span-2 md:inline-block whitespace-nowrap w-fit bg-grey08 rounded-2xl border border-grey15 cursor-pointer
+          <Link href={viewBtnLink || '#'} className="ml-auto px-[24px] py-[14px] hidden col-start-5 col-span-2 md:inline-block whitespace-nowrap w-fit bg-grey08 rounded-2xl border border-grey15 cursor-pointer
             hover:bg-grey08/80 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-grey08 focus:ring-opacity-50">
             {viewBtn}
-          </button>
+          </Link>
         )}
       </div>
       
