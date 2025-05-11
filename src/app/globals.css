@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/Estate/fonts/Urbanist-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 900;
+  src: url("/Estate/fonts/Urbanist-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/Estate/fonts/Urbanist-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/Estate/fonts/Urbanist-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/Estate/fonts/Urbanist-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 800;
+  src: url("/Estate/fonts/Urbanist-ExtraBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/Estate/fonts/Urbanist-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/Estate/fonts/Urbanist-SemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/Estate/fonts/Urbanist-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/Estate/fonts/Urbanist-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Estate/fonts/Urbanist-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/Estate/fonts/Urbanist-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/Estate/fonts/Urbanist-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 300;
+  src: url("/Estate/fonts/Urbanist-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/Estate/fonts/Urbanist-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 200;
+  src: url("/Estate/fonts/Urbanist-ExtraLightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/Estate/fonts/Urbanist-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: italic;
+  font-weight: 100;
+  src: url("/Estate/fonts/Urbanist-ThinItalic.ttf") format("truetype");
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-white10: #ffffff1A;
+
+  --color-grey08: #141414;
+  --color-grey10: #1A1A1A;
+  --color-grey15: #262626;
+  --color-grey30: #4D4D4D;
+  --color-grey60: #999999;
+  --color-purple60: #703BF7;
+  --color-purple75: #A685FA;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  :root {
+    --bg-AbstractDesign: url("/Estate/images/AbstractDesign.png");
+    --bg-AbstractDesign2: url("/Estate/images/AbstractDesign2.png");
+    --bg-AbstractDesign3: url("/Estate/images/AbstractDesign3.png");
+    --bg-city: url('/Estate/images/city.jpg');
+    --bg-home: url('/Estate/images/About/home.jpg');
+    --bg-AbstractDesignLeft: url("/Estate/images/AbstractDesignLeft.png");
+    --bg-AbstractDesignRight: url("/Estate/images/AbstractDesignRight.png");
+  }
+}
+
+@layer utilities {
+  .bg-abstractDesign {
+    background-image: var(--bg-AbstractDesign);
+  }
+
+  .bg-abstractDesign2 {
+    background-image: var(--bg-AbstractDesign2);
+  }
+
+  .bg-abstractDesign3 {
+    background-image: var(--bg-AbstractDesign3);
+  }
+
+  .bg-city {
+    background-image: var(--bg-city);
+  }
+
+  .bg-home {
+    background-image: var(--bg-home);
+  }
+
+  .bg-abstractDesignLeft {
+    background-image: var(--bg-AbstractDesignLeft);
+  }
+
+  .bg-abstractDesignRight {
+    background-image: var(--bg-AbstractDesignRight);
+  }
+
+  .bg-seaside {
+    background-image: url('/Estate/images/Seaside.jpg');
+  }
+
+  .bg-rustic {
+    background-image: url('/Estate/images/Rustic.jpg');
+  }
+
+  .bg-metropolitan {
+    background-image: url('/Estate/images/Metropolitan.jpg');
+  }
+
+  .bg-beachfront {
+    background-image: url('/Estate/images/Beachfront Villa.jpg');
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Urbanist", Helvetica, sans-serif;
+}
+
+
+
