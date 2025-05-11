@@ -54,7 +54,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/about": {
+    "/services": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -67,8 +67,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
+      "srcRoute": "/services",
+      "dataRoute": "/services.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -102,6 +102,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/about": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/": {
       "experimentalBypassFor": [
         {
@@ -117,30 +141,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/",
       "dataRoute": "/index.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/services": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/services",
-      "dataRoute": "/services.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -276,8 +276,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "11ff45751339e896e6eb2ae7422c4aca",
-    "previewModeSigningKey": "83972c5625b0c1203244bc296fbf7cad00db4b97e85622c9aad74e2b3d6d9456",
-    "previewModeEncryptionKey": "ef235e26e6b7698d1cd7028918c3abc7d39f22d042301c07543a5b2a1fb1c0f9"
+    "previewModeId": "e17b105780abf5ba5f39b3c9724d407e",
+    "previewModeSigningKey": "221f5a414362ca9cc45d500d7c6e1168720abc5c91d7a05cda2259b0ed03a0dc",
+    "previewModeEncryptionKey": "a2983104125985df7bad125a117927d8f1c333b1039faf90a99f7e1e7955d2c6"
   }
 }
