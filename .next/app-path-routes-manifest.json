@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/about/page": "/about",
+  "/faq/contact-agent/page": "/faq/contact-agent",
+  "/faq/page": "/faq",
+  "/contact/page": "/contact",
+  "/faq/search-properties/page": "/faq/search-properties",
+  "/learn-more/page": "/learn-more",
+  "/faq/sell-property/page": "/faq/sell-property",
+  "/faq/sell-without-agent/page": "/faq/sell-without-agent",
+  "/testimonials/page": "/testimonials",
+  "/services/page": "/services",
+  "/propertiesList/page": "/propertiesList",
+  "/properties/page": "/properties",
+  "/details/[id]/page": "/details/[id]",
+  "/page": "/"
+}

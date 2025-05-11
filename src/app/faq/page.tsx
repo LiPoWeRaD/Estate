@@ -9,7 +9,7 @@ const FAQPage = () => {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
           <p className="text-lg md:text-xl mb-12 max-w-3xl">
-            Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.
+            {`Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.`}
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

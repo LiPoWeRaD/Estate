@@ -1,8 +1,18 @@
 {
-  "/faq/search-properties/page": "app/faq/search-properties/page.js",
-  "/faq/page": "app/faq/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/about/page": "app/about/page.js",
   "/faq/contact-agent/page": "app/faq/contact-agent/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/faq/search-properties/page": "app/faq/search-properties/page.js",
+  "/learn-more/page": "app/learn-more/page.js",
+  "/faq/sell-property/page": "app/faq/sell-property/page.js",
+  "/faq/sell-without-agent/page": "app/faq/sell-without-agent/page.js",
   "/testimonials/page": "app/testimonials/page.js",
   "/services/page": "app/services/page.js",
+  "/propertiesList/page": "app/propertiesList/page.js",
+  "/properties/page": "app/properties/page.js",
+  "/details/[id]/page": "app/details/[id]/page.js",
   "/page": "app/page.js"
 }

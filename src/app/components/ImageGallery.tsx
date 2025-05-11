@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface ImageGalleryProps {
@@ -81,7 +82,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                                     }`}
                                     onClick={() => selectImage(index)}
                                 >
-                                    <img 
+                                    <Image 
                                         src={image} 
                                         alt={`${title} - фото ${index + 1}`}
                                         className="w-full h-full object-cover hover:opacity-90 transition-opacity"
@@ -106,7 +107,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                                 }`}
                                 onClick={() => selectImage(index)}
                             >
-                                <img 
+                                <Image 
                                     src={image} 
                                     alt={`${title} - фото ${index + 1}`}
                                     className="w-full h-full object-cover hover:opacity-90 transition-opacity"
@@ -120,7 +121,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                 <div className="grid grid-cols-2 gap-4">
                     {/* Предыдущее изображение (слева) */}
                     <div className="aspect-video overflow-hidden rounded-lg">
-                        <img 
+                        <Image 
                             src={images[previousIndex]} 
                             alt={`${title} - предыдущее фото`}
                             className="w-full h-full object-cover"
@@ -128,7 +129,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                     </div>
                     {/* Текущее изображение (справа) */}
                     <div className="aspect-video overflow-hidden rounded-lg">
-                        <img 
+                        <Image 
                             src={images[currentIndex]} 
                             alt={`${title} - текущее фото`}
                             className="w-full h-full object-cover"

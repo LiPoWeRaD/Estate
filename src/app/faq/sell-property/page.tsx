@@ -19,7 +19,7 @@ const SellPropertyPage = () => {
               <h2 className="text-2xl font-semibold mb-4">Essential Documents</h2>
               <ul className="list-disc pl-6 space-y-4">
                 <li>Property ownership certificate or extract from the Unified State Register</li>
-                <li>Owner's passport</li>
+                <li>{`Owner's passport`}</li>
                 <li>Technical passport of the property</li>
                 <li>Cadastral passport</li>
                 <li>Certificate of no utility debt</li>
@@ -30,10 +30,10 @@ const SellPropertyPage = () => {
               <h2 className="text-2xl font-semibold mb-4">Additional Documents</h2>
               <p className="mb-4">Depending on the property type, you may need:</p>
               <ul className="list-disc pl-6 space-y-4">
-                <li>Spouse's consent to sell (if property was acquired during marriage)</li>
-                <li>Guardianship authority permission (if owner is a minor)</li>
-                <li>Land plot documents (for private houses)</li>
-                <li>Reconstruction documents (if any)</li>
+                <li>{`Spouse's consent to sell (if property was acquired during marriage)`}</li>
+                <li>{`Guardianship authority permission (if owner is a minor)`}</li>
+                <li>{`Land plot documents (for private houses)`}</li>
+                <li>{`Reconstruction documents (if any)`}</li>
               </ul>
             </section>
 
